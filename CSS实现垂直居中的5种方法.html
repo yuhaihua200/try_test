@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS实现垂直居中的5种方法</title>
+	<style type-"text/css">
+/**************************************************************
+*方法一:表格法;					*
+*这个方法有个问题				*
+*1.IE8无效						*
+*2.表格的高度默认和文字高度相同	*
+*优点:content 可以动态改变高度(不需在 CSS 中定义)。当 wrapper 里没有足够空间时， content 不会被截断;						*
+**************************************************************/
+		#wrapper{display: table;/*key*/
+			/*width: 300px;
+			height: 100%;*/}/*高度*/
+		#cell{display: table-cell;/*key*/
+			vertical-align: middle;
+			background-color: pink;}
+/**********************************************************
+*方法二&&&&&&&&&&&&&&&
+*利用绝对定位方法达到垂直居中效果
+*必须固定高度
+*或许你想给 content 指定 overflow:auto，这样如果 content 太多的话，就会出现滚动条，以免content 溢出
+***********************************************************/
+		.content2{background-color: pink;
+			position: absolute;
+			top: 50%;/*将顶线移动*/
+			height: 300px;/*设置高度*/
+			margin-top: -150px;/*利用负margin移动高度*/}
+/*方法三:无法实现!!*/
+/*
+		#floater{background-color: gold;
+			float: left;
+			height: 50%;
+			margin-bottom: -120px;}
+		#content{background-color: pink;
+			height: 240px;
+			position: relative;
+			clear: both;}
+*/
+
+/************************************************
+*方法四&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+*利用绝对定位撑开,再利用margin:auto来做到绝对居中
+**************************************************/
+		#content4{background-color: pink;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 280px;
+			width: 200px;
+			margin: auto;}
+/************************************************
+*方法五&&&&&&&&&&&&&&&&
+*利用行高来实现垂直居中
+**************************************************/	
+		#content5{background-color: pink;
+			height: 200px;
+			line-height: 200px;}
+	</style>
+</head>
+<body>
+<!-- 方法一HTML -->
+	<!-- <div id="wrapper">  
+	    <div id="cell">
+	        <div class="content">Method 1:Content goes here</div>
+	    </div>
+	</div>   -->
+
+<!-- 方法二HTML -->
+	<!-- <div class="content2">Method 2:Content goes here</div> -->
+
+<!-- 方法三HTML -->
+	<!-- <div id="floater">  
+    	<div id="content">Content hereContent hereContent hereContent hereContent here</div>
+	</div> -->
+
+<!-- 方法四HTML -->
+	<!-- <div id="content4">Methon 4:Content here</div> -->
+
+<!-- 方法五HTML -->
+	<!-- <div id="content5">Methon 5:Content here</div>  -->
+</body>
+</html>

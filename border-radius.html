@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圆、半圆和四分之一圆</title>
+	<style type="text/css">
+		.ra{background-color: pink;
+			width: 200px;
+			height: 200px;}
+		.first{border-radius: 100px;/*无论怎么变化,都不能超过100,因为宽高已经限制为200*/}
+		.second{border-radius: 100px;
+		border: 5px solid black;/*边框数值不能太大,否则将变形*/}
+		.third{border-radius: 200px 200px 0 0;
+		height: 100px;/*高度为宽度的一半才能形成半圆*/}
+		.forth{border-radius: 200px 0 0 0;}/*顺序是左角,右,下右,下左*/
+	</style>
+</head>
+<body>
+	<div class="ra first"></div>
+	<div class="ra second"></div>
+	<div class="ra third"></div>
+	<div class="ra forth"></div>
+</body>
+</html>

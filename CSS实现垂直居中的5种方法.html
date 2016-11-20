@@ -11,12 +11,14 @@
 *2.表格的高度默认和文字高度相同	*
 *优点:content 可以动态改变高度(不需在 CSS 中定义)。当 wrapper 里没有足够空间时， content 不会被截断;						*
 **************************************************************/
-		#wrapper{display: table;/*key*/
-			/*width: 300px;
-			height: 100%;*/}/*高度*/
+		#wrapper{/*display: table;*//*key*/
+			width: 300px;
+			/*height: 500px;*/
+			background-color: gold;}
 		#cell{display: table-cell;/*key*/
 			vertical-align: middle;
-			background-color: pink;}
+			background-color: pink;
+			height: 500px;/*key*/}
 /**********************************************************
 *方法二&&&&&&&&&&&&&&&
 *利用绝对定位方法达到垂直居中效果
@@ -64,11 +66,11 @@
 </head>
 <body>
 <!-- 方法一HTML -->
-	<!-- <div id="wrapper">  
+	<div id="wrapper">  
 	    <div id="cell">
 	        <div class="content">Method 1:Content goes here</div>
 	    </div>
-	</div>   -->
+	</div>  
 
 <!-- 方法二HTML -->
 	<!-- <div class="content2">Method 2:Content goes here</div> -->
